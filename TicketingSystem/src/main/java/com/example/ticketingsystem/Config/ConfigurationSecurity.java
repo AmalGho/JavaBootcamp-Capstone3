@@ -36,7 +36,7 @@ public class ConfigurationSecurity {
                 .authenticationProvider(daoAuthenticationProvider())
                 .authorizeHttpRequests()
                 .requestMatchers("/api/v1/auth/adminRegister","/api/v1/auth/managerRegister","/api/v1/auth/systemOwnerRegister").permitAll()
-                .requestMatchers("/api/v1/manager/getAllManagers","/api/v1/owner/getAllOwners","/api/v1/ticket/getAllTickets","/api/v1/getAllResults","/api/v1/request/deleteRequest/{request_id}","/api/v1/ticket/deleteTicket/{ticket_id}","/api/v1/request/deleteResult/{result_id}").hasAuthority("ADMIN")
+                .requestMatchers("/api/v1/manager/getAllManagers","/api/v1/owner/getAllOwners","/api/v1/ticket/getAllTickets","/api/v1/getAllResults","/api/v1/request/deleteRequest/{request_id}","/api/v1/ticket/deleteTicket/{ticket_id}","/api/v1/result/deleteResult/{result_id}").hasAuthority("ADMIN")
                 .requestMatchers("/api/v1/manager/addProfile","/api/v1/manager/updateInfo","/api/v1/manager/deleteAccount","/api/v1/ticket/addTicket/{request_id}", "/api/v1/ticket/updateTicket/{ticket_id}","/api/v1/ticket/getMyTickets","/api/v1/request/getAllRequests","/api/v1/request/managerAcceptRequest/{request_id}","/api/v1/request/getAllResults","/api/v1/request/addResult/{request_id}","/api/v1/request/updateResult/{request_id}").hasAuthority("MANAGER")
                 .requestMatchers("/api/v1/owner/addProfile","/api/v1/owner/updateInfo","/api/v1/owner/deleteAccount","/api/v1/request/getOwnerRequest","/api/v1/request/makeRequest","/api/v1/request/reRequest/{request_id}").hasAuthority("OWNER")
                 .anyRequest().authenticated()
